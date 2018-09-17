@@ -10,7 +10,7 @@
 
         </header>
         <main>
-            <div class="wrapper" id='mainxxx'>
+            <div class="wrapper" id='main'>
 
             </div>
         </main>
@@ -46,26 +46,41 @@
             }
             index = 0
             while (index < keys['length']) {
-                divxxx = document.createElement('div')
-                mainxxx.appendChild(divxxx)
+                div = document.createElement('div')
+                div.className = 'row'
+                main.appendChild(div)
                 row = keys[index]
                 console.log(row)
                 index2 = 0
                 while (index2 < row.length) {
-                    kbdxxx = document.createElement('kbd')
-                    kbdxxx.textContent = row[index2]
-                    buttonxxx = document.createElement('button')
-                    buttonxxx.textContent = '编辑'
-                    buttonxxx.id = row[index2]
-                    buttonxxx.onclick = function(hhh) {
-                        key = hhh['target']['id']
+                    kbd = document.createElement('kbd')
+                    span = document.createElement('span')
+                    span.textContent = row[index2]
+                    span.className = 'text'
+                    kbd.appendChild(span)
+                    kbd.className = 'key'
+                    button = document.createElement('button')
+                    button.textContent = '编辑'
+                    button.id = row[index2]
+                    img = document.createElement('img')
+                    if (hash[row[index2]]) {
+                        img.src = 'http://' + hash[row[index2]] + '/favicon.ico'
+                    } else {
+                        img.src = '//' + 'qq.com' + '/favicon.ico'
+                    }
+                    img.onerror = function(event) {
+                        event.target.src = '//' + 'qq.com' + '/favicon.ico'
+                    }
+                    button.onclick = function(event) {
+                        key = event['target']['id']
                         x = prompt('给我一个网址')
                         hash[key] = x
                         localStorage.setItem('zzz', JSON.stringify(hash))
                         console.log(hash)
                     }
-                    kbdxxx.appendChild(buttonxxx)
-                    divxxx.appendChild(kbdxxx)
+                    kbd.appendChild(img)
+                    kbd.appendChild(button)
+                    div.appendChild(kbd)
                     index2 = index2 + 1
                 }
                 index = index + 1
