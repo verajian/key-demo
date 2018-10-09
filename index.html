@@ -75,7 +75,7 @@
                 return img
             }
 
-            function functionName() {
+            function init() {
                 var keys = {
                     '0': ['q','w','e','r','t','y','u','i','o','p'],
                     '1': ['a','s','d','f','g','h','j','k','l'],
@@ -132,7 +132,7 @@
                     }
                 }
             }
-            function listenToKeyboard(hash) {
+            function listenToUser(hash) {
                 document.onkeypress = function(event) {
                     var key = event['key']
                     var website = hash[key]
