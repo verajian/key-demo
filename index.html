@@ -67,10 +67,10 @@
                 if (domain) {
                     img.src = 'http://' + domain + '/favicon.ico'
                 } else {
-                    img.src = '//' + 'qq.com' + '/favicon.ico'
+                    img.src = './bg.jpg'
                 }
                 img.onerror = function(event) {
-                    event.target.src = '//' + 'qq.com' + '/favicon.ico'
+                    event.target.src = './bg.jpg'
                 }
                 return img
             }
