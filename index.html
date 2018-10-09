@@ -55,7 +55,7 @@
                     hash[key] = x
                     img2.src = 'http://' + x + '/favicon.ico'
                     img2.onerror = function(event) {
-                        event.target.src = './bg.jpg'
+                        event.target.src = 'https://github.com/verajian/key-demo/blob/master/bg.jpg?raw=true'
                     }
                     localStorage.setItem('zzz', JSON.stringify(hash))
                     console.log(hash)
@@ -67,10 +67,10 @@
                 if (domain) {
                     img.src = 'http://' + domain + '/favicon.ico'
                 } else {
-                    img.src = './bg.jpg'
+                    img.src = 'https://github.com/verajian/key-demo/blob/master/bg.jpg?raw=true'
                 }
                 img.onerror = function(event) {
-                    event.target.src = './bg.jpg'
+                    event.target.src = 'https://github.com/verajian/key-demo/blob/master/bg.jpg?raw=true'
                 }
                 return img
             }
